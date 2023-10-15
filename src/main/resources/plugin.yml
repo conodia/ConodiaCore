@@ -1,0 +1,23 @@
+name: ConodiaCore
+version: 1.0.0
+author: PandaGuerrier
+main: fr.pandaguerrier.conodia.ConodiaCore
+depend: [Factions]
+commands:
+  abc:
+    description: Permet de faire un broadcast.
+  ccl: 
+    description: Permet de clear le chat
+  vote:
+  site:
+  discord:
+  boutique:
+  ping:
+     description: Permet de récuperer son ping 
+  chat:
+  levels:
+     aliases: [level, lvl]
+  voteplayer:
+  clearlag:
+  lag:
+  
