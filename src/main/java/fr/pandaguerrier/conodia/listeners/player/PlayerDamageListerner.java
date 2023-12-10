@@ -10,7 +10,6 @@ import org.bukkit.event.entity.EntityDamageEvent;
 public class PlayerDamageListerner implements Listener {
     @EventHandler(priority = EventPriority.MONITOR)
     public void entityDamageEvent(EntityDamageEvent event) {
-
         if (event.getEntityType() == EntityType.PLAYER && event.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK) {
             double damage = event.getDamage() - 5.0;
             Player player = (Player) event.getEntity();

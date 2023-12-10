@@ -7,11 +7,7 @@ import fr.pandaguerrier.conodia.ConodiaCore;
 import fr.pandaguerrier.conodia.commandremover.CommandRemover;
 import fr.pandaguerrier.conodia.commandremover.ConfigJSON;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Objects;
 
 public class ConfigStorage {
@@ -23,7 +19,7 @@ public class ConfigStorage {
         this
 
                 .gson = (new GsonBuilder()).disableHtmlEscaping().setPrettyPrinting().serializeNulls().create();
-        storageFile = ConodiaCore.getInstance.getDataFolder();
+        storageFile = ConodiaCore.getInstance().getDataFolder();
         if (!storageFile.exists())
             storageFile.mkdir();
     }

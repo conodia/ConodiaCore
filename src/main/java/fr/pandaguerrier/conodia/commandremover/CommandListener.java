@@ -1,10 +1,11 @@
 package fr.pandaguerrier.conodia.commandremover;
 
-import java.util.List;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+
+import java.util.List;
 
 public class CommandListener implements Listener {
     @EventHandler

@@ -1,11 +1,11 @@
 package fr.pandaguerrier.conodia.commands.admin;
 
-import org.bukkit.Bukkit;
 import fr.pandaguerrier.conodia.ConodiaCore;
-import org.bukkit.entity.Player;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class Chat implements CommandExecutor
 {
@@ -20,13 +20,16 @@ public class Chat implements CommandExecutor
         if (args.length != 0) {
             return true;
         }
-        if (ConodiaCore.getInstance.chatBlockerBoolean) {
+        if (ConodiaCore.getInstance().isChatBlocker()) {
             sender.sendMessage("§aChat actif");
             Bukkit.broadcastMessage("§8§m-----------------------------\n§f \n§f        §a" + sender.getName() + " a r\u00e9activ\u00e9 le chat.\n \n§a             Merci de ne pas spam !\n \n§8§m-----------------------------");
-            return ConodiaCore.getInstance.chatBlockerBoolean = false;
+
+            ConodiaCore.getInstance().setChatBlocker(false);
+            return true;
         }
         sender.sendMessage("§cChat d\u00e9sactiv\u00e9");
         Bukkit.broadcastMessage("§8§m-----------------------------\n§f \n§f        §c" + sender.getName() + " a d\u00e9sactiv\u00e9 le chat.\n \n  Pour toutes demande, merci de se r\u00e9f\u00e9rer au discord !\n \n§8§m-----------------------------");
-        return ConodiaCore.getInstance.chatBlockerBoolean = true;
+        ConodiaCore.getInstance().setChatBlocker(true);
+        return true;
     }
 }

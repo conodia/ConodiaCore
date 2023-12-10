@@ -1,24 +1,15 @@
 package fr.pandaguerrier.conodia;
 
-import com.massivecraft.factions.Faction;
 import fr.pandaguerrier.conodia.utils.Load;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.HashMap;
-
-
 public class ConodiaCore extends JavaPlugin {
-    public boolean chatBlockerBoolean = false;
-    public HashMap<Faction, Object> factionLevel = new HashMap<>();
-
-    public static ConodiaCore getInstance;
-    public static Config getConfig;
-
+    private boolean chatBlockerBoolean = false;
+    private static ConodiaCore INSTANCE;
     public int timeClearLag = 600;
 
     @Override
     public void onEnable() {
-        getInstance = this;
+        INSTANCE = this;
 
         Load load = new Load();
         load.Main();
@@ -30,4 +21,15 @@ public class ConodiaCore extends JavaPlugin {
         System.out.println("\n \n-------------------------\n \nLe Core est déconnecté !\n \n-------------------------\n \n");
     }
 
+    public static ConodiaCore getInstance() {
+        return INSTANCE;
+    }
+
+    public boolean isChatBlocker() {
+        return chatBlockerBoolean;
+    }
+
+    public void setChatBlocker(boolean chatBlockerBoolean) {
+        this.chatBlockerBoolean = chatBlockerBoolean;
+    }
 }

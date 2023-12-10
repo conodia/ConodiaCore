@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Clearlag implements CommandExecutor
 {
     public boolean onCommand( CommandSender sender,  Command cmd,  String msg,  String[] args) {
-        List<Entity> entities = Bukkit.getServer().getWorld("world").getEntities();
+       List<Entity> entities = Bukkit.getServer().getWorld("world").getEntities();
 
        AtomicInteger i = new AtomicInteger();
 

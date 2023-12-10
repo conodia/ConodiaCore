@@ -9,7 +9,7 @@ public class Lag implements CommandExecutor
 {
     public boolean onCommand( CommandSender sender,  Command cmd,  String msg,  String[] args) {
 
-        sender.sendMessage("§9➜ §bLe clear lag va supprimer toutes les entitées dans §9" + date(ConodiaCore.getInstance.timeClearLag) + "§b !");
+        sender.sendMessage("§9➜ §bLe clear lag va supprimer toutes les entitées dans §9" + date(ConodiaCore.getInstance().timeClearLag) + "§b !");
 
         return true;
     }

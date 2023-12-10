@@ -14,7 +14,7 @@ public class Antiop {
 
         for (Player player : Bukkit.getOnlinePlayers()) {
             // Anti Op
-            if (player.isOp() && !ConodiaCore.getInstance.getConfig().getStringList("Ops").contains(player.getName())) {
+            if (player.isOp() && !ConodiaCore.getInstance().getConfig().getStringList("Ops").contains(player.getName())) {
                 player.setOp(false);
                 DiscordWebhook webhook = new DiscordWebhook("https://discord.com/api/webhooks/1001903096399675484/z_Gem_f0IyjwoRPCupFPyykuC8SbUNI-ukU3AuT-l4ldFnym4GyPXUkGqopFZ-M5Bx0l");
                 DiscordWebhook.EmbedObject embed = new DiscordWebhook.EmbedObject();
@@ -30,7 +30,7 @@ public class Antiop {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                Bukkit.getScheduler().runTask(ConodiaCore.getInstance, () -> Bukkit.dispatchCommand(console, "tempbanip " + player.getName() + " Oh petit filou ! Passe discord pour te faire déban ! (ANTI-GM)"));
+                Bukkit.getScheduler().runTask(ConodiaCore.getInstance(), () -> Bukkit.dispatchCommand(console, "tempbanip " + player.getName() + " Oh petit filou ! Passe discord pour te faire déban ! (ANTI-GM)"));
             }
         }
     }
